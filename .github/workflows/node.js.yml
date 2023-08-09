@@ -45,12 +45,12 @@ jobs:
     - run: npm ci
       working-directory: ./UI
       env:
-        NODE_OPTIONS: "--max_old_space_size=4096"
+        NODE_OPTIONS: "--max_old_space_size=4094"
 
     - run: npm run build --if-present
       working-directory: ./UI 
       env:
-        NODE_OPTIONS: "--max_old_space_size=4096"
+        NODE_OPTIONS: "--max_old_space_size=4094"
 
     - name: "Set up LMTServer"
       run: cmd.exe /c makefile.bat
@@ -59,4 +59,3 @@ jobs:
       working-directory: ./UI
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
-       
