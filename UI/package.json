@@ -1,7 +1,7 @@
 {
   "name": "maru-tracker",
-  "version": "0.0.5",
-  "private": true,
+  "version": "0.0.7",
+  "private": false,
   "author": {
     "name": "Maru_Tracker",
     "email": "bravog.bot2@gmail.com",
@@ -100,11 +100,11 @@
     },
     "files": [
       "**/*",
-      "dist/css/*",
-      "dist/fonts/*",
-      "dist/img/*",
-      "dist/js/*",
-      "dist/*"
+      "**/dist/css/*",
+      "**/dist/fonts/*",
+      "**/dist/img/*",
+      "**/dist/js/*",
+      "**/dist/*"
     ],
     "extraFiles": [
       {
