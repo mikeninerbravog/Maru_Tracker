@@ -56,7 +56,7 @@ for (let i = 0; i < setCodes.length; i++) {
   for (let j = 0; j < setLocales.length; j++) {
     let setCode = setCodes[i]
     const api = `http://dd.b.pvp.net/latest/set${setCode}/${setLocales[j]}/data/set${setCode}-${setLocales[j]}.json`
-    const path = `./src/data/set${setCode}-${setLocales[j]}.json`
+    const path = `../src/data/set${setCode}-${setLocales[j]}.json`
 
     if (files[j] == null) {
       files[j] = []
@@ -87,7 +87,7 @@ if (specialAdditions.length > 0)
       let version = item.version
       let setCode = item.set
       const api = `http://dd.b.pvp.net/${version}/set${setCode}/${setLocales[j]}/data/set${setCode}-${setLocales[j]}.json`
-      const path = `./src/data/${version}-set${setCode}-${setLocales[j]}.json`
+      const path = `../src/data/${version}-set${setCode}-${setLocales[j]}.json`
 
       files[j].push(path)
       console.log(`Download Started for version: ${version}, set${setCode}, locale: ${setLocales[j]}, api: ${api}`)
@@ -115,14 +115,14 @@ function concatFiles() {
     }
 
     let data = JSON.stringify(finalJson, null, 2)
-    fs.writeFileSync(`./src/data/${setLocales[i]}.json`, data)
+    fs.writeFileSync(`../src/data/${setLocales[i]}.json`, data)
   }
 }
 
 function generateSimplifiedChinese() {
   const chineseConv = require("chinese-conv")
-  let data = chineseConv.sify(fs.readFileSync(`./src/data/zh_tw.json`, "utf8"))
-  fs.writeFileSync(`./src/data/zh_cn.json`, data)
+  let data = chineseConv.sify(fs.readFileSync(`../src/data/zh_tw.json`, "utf8"))
+  fs.writeFileSync(`../src/data/zh_cn.json`, data)
 }
 
 allProgress(promises, (p) => {

@@ -21,7 +21,7 @@ champs.forEach((champ) => {
     var setCode = champ.set.slice(3)
     var set = setCodes.findIndex((val) => val == setCode)
 
-    var location = "./src/assets/images/cards/cropped/" + code + "-cropped.png"
+    var location = "../src/assets/images/cards/cropped/" + code + "-cropped.png"
     if (!fs.existsSync(location)) {
       console.log("Missing " + name + " " + code)
 
@@ -44,7 +44,7 @@ function downloadImage(name, code, set) {
   // Download image and save to ./missingImage with name {code}.png
   let setCode = setCodes[set]
   const API_LINK = `https://dd.b.pvp.net/latest/set${setCode}/en_us/img/cards/${code}-full.png`
-  const path = `./devtool/missingImage/${code}.png`
+  const path = `../devtool/missingImage/${code}.png`
 
   console.log(`Download Started for image of ${name}, ${API_LINK}`)
   const request = http.get(API_LINK, function (response) {
